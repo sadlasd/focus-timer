@@ -1,0 +1,75 @@
+:root { font-family: Arial, Helvetica, sans-serif; color: #263448; background: #f4f6f9; font-synthesis: none; --blue: #245bdb; --muted: #647187; --border: #e1e6ee; }
+* { box-sizing: border-box; }
+body { margin: 0; }
+button, input { font: inherit; }
+button { cursor: pointer; }
+button:disabled { cursor: default; }
+button, a, input, summary { -webkit-tap-highlight-color: transparent; }
+:focus-visible { outline: 3px solid #78a0ff; outline-offset: 3px; }
+.app { max-width: 1040px; margin: 0 auto; padding: 0 28px; }
+.header { height: 90px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--border); }
+.brand { display: flex; align-items: center; gap: 10px; color: #25354c; text-decoration: none; font-size: 22px; font-weight: 700; }
+.header-caption { color: var(--muted); font-size: 14px; }
+.page-heading { margin: 44px 0 28px; }
+h1 { font-size: clamp(26px, 4vw, 32px); letter-spacing: -.7px; margin: 0 0 12px; }
+.page-heading p { color: var(--muted); margin: 0; line-height: 1.5; }
+.workspace { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; align-items: start; }
+.timer-panel, .tasks-panel { background: #fff; border: 1px solid var(--border); border-radius: 14px; padding: 24px; }
+.timer-panel { border-top: 3px solid var(--blue); }
+.modes { display: flex; gap: 4px; background: #f2f5fa; padding: 4px; border-radius: 8px; }
+.modes button { flex: 1; border: 0; background: transparent; border-radius: 6px; color: #5c687b; font-size: 14px; line-height: 1.3; padding: 10px 5px; }
+.modes .selected { background: #fff; color: var(--blue); box-shadow: 0 1px 4px #23375415; font-weight: 600; }
+.timer-face { text-align: center; padding: 32px 0 27px; }
+.timer-label, .timer-caption { display: block; color: var(--muted); font-size: 14px; }
+.time { font-size: clamp(60px, 8vw, 86px); font-weight: 700; letter-spacing: -3px; font-variant-numeric: tabular-nums; line-height: 1.25; margin: 7px 0 10px; color: #243d64; }
+.timer-progress { display: block; width: 100%; height: 5px; border: none; appearance: none; border-radius: 4px; overflow: hidden; background: #edf1f7; accent-color: var(--blue); }
+.timer-progress::-webkit-progress-bar { background: #edf1f7; }
+.timer-progress::-webkit-progress-value { background: var(--blue); }
+.timer-progress::-moz-progress-bar { background: var(--blue); }
+.timer-actions { display: flex; gap: 12px; margin-top: 23px; }
+.primary, .reset { min-height: 46px; border-radius: 8px; font-weight: 600; }
+.primary { flex: 1; color: #fff; background: var(--blue); border: 1px solid var(--blue); }
+.primary:hover, .add-task:hover { background: #194ac0; }
+.reset { padding: 0 20px; background: #fff; color: #536076; border: 1px solid #dce2ec; }
+.reset:hover { background: #f4f6fa; }
+.session-message { min-height: 32px; margin: 12px 0 8px; font-size: 14px; line-height: 1.5; color: #2756b5; text-align: center; }
+.current-task { border-top: 1px solid var(--border); padding-top: 18px; display: grid; gap: 7px; }
+.current-task span { font-size: 12px; color: var(--muted); }
+.current-task strong { font-size: 14px; line-height: 1.5; font-weight: 500; overflow-wrap: anywhere; }
+.section-heading { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+h2 { font-size: 20px; margin: 0; }
+.section-heading > span { color: var(--muted); background: #f1f4f8; padding: 5px 9px; font-size: 13px; border-radius: 5px; }
+.muted { color: var(--muted); }
+.task-hint { font-size: 14px; margin: 9px 0 22px; }
+.task-form { display: flex; gap: 8px; }
+.task-form input { width: 100%; min-width: 0; border: 1px solid #d8e0eb; border-radius: 8px; padding: 12px; color: #263448; background: #fff; }
+.task-form input::placeholder { color: #778295; }
+.add-task { flex-shrink: 0; width: 46px; border: 0; border-radius: 8px; background: var(--blue); color: white; font-size: 26px; }
+.add-task:disabled { background: #dee6f5; color: #60759a; }
+.task-list { padding: 0; list-style: none; margin: 20px 0; display: grid; gap: 9px; }
+.task { display: flex; align-items: center; gap: 10px; border: 1px solid var(--border); border-radius: 8px; padding: 8px 9px 8px 12px; min-height: 58px; }
+.task input { width: 18px; height: 18px; flex-shrink: 0; accent-color: var(--blue); cursor: pointer; }
+.task-name { flex: 1; text-align: left; border: 0; background: transparent; color: #34435b; line-height: 1.45; padding: 6px 0; min-width: 0; font-size: 15px; overflow-wrap: anywhere; }
+.task-name small { display: block; color: var(--blue); font-size: 12px; margin-top: 3px; }
+.active-task { border-color: #94b5f6; background: #f3f7ff; }
+.done-task .task-name { color: #6f7b8b; text-decoration: line-through; }
+.delete-task { align-self: center; flex-shrink: 0; width: 32px; height: 36px; border: 0; background: transparent; font-size: 23px; color: #7a879a; border-radius: 5px; }
+.delete-task:hover { background: #fff0ef; color: #b33e33; }
+.save-note { color: var(--muted); font-size: 12px; margin: 24px 0 0; }
+.empty-state { padding: 28px 8px; text-align: center; }
+.empty-state p { margin: 0 0 10px; font-weight: 600; }
+.empty-state span { font-size: 14px; color: var(--muted); line-height: 1.5; }
+.below-board { padding: 23px 0; }
+.session-stats { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; font-size: 14px; color: #647187; }
+.session-stats strong { color: #294978; font-size: 18px; }
+.stat-divider { width: 1px; height: 18px; background: #d8e0eb; margin: 0 10px; }
+.below-board p { color: #647187; font-size: 14px; margin: 15px 0 0; line-height: 1.5; }
+.how-to { border-top: 1px solid var(--border); padding: 20px 0; font-size: 14px; }
+.how-to summary { width: fit-content; cursor: pointer; color: #4b5f7a; }
+.how-to p { max-width: 680px; color: #5c697c; line-height: 1.7; }
+.storage-error { color: #9f4028; line-height: 1.5; }
+footer { color: #6c798d; font-size: 12px; padding: 22px 0 28px; }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; }
+@media (max-width: 720px) { .workspace { grid-template-columns: 1fr; } .app { max-width: 540px; padding: 0 18px; } .header { height: 72px; } .header-caption { font-size: 12px; max-width: 130px; text-align: right; } .page-heading { margin-top: 30px; } .timer-panel, .tasks-panel { padding: 20px; } .time { font-size: 76px; } }
+@media (max-width: 360px) { .modes button { font-size: 12px; } .session-stats { gap: 6px; } .stat-divider { margin: 0 3px; } }
+@media (prefers-reduced-motion: reduce) { * { scroll-behavior: auto; } }
